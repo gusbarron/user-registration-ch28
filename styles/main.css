@@ -9,9 +9,20 @@
   padding: 0;
 }
 
-body
+
 header.site-header{
   background-color: #004b51;
   color: white;
   height: 30vh;
+}
+
+
+.menu a{
+  color:white;
+  margin-right:30px;
+  text-decoration: none;
+}
+
+.input-error{
+  border: 
 }

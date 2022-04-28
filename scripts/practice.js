@@ -30,3 +30,22 @@ formControl.hide();
 let labels = $("label");
 console.log(labels);
 
+//
+//click on the button and increase the counter
+
+//function
+
+  //variable counter
+  //display the variable into the id=counter
+
+  let c=0;
+  let div=$("#counter");
+  function counter(){
+    c++;
+    div.text(c);
+  
+  }
+
+  function init(){
+    $("#btn")
+  }

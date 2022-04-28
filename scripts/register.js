@@ -8,7 +8,22 @@ class User {
     this.gender = gender;
   }
 }
+//Mandatory email and password
+function isValid(user){
+  let valid=true;
+  $("input").removeClass("input-error");
+  if(user.email.length==0){
+    valid=false;
+    console.error("Add an email");
+    $("#txtEmail").addClass("input-error");
+  }
+  if(user.password==0){
+    valid=false;
+    console.error("Add a password");
 
+  }
+  return valid;
+}
 
 function register(){
 let inputfName = $("#txtFirstName").val();
@@ -18,7 +33,9 @@ let inputPassword = $("#txtPassword").val();
 let inputGender = $("#txtGender").val();
 
 let newUser = new User(inputfName, inputlName, inputEmail, inputPassword,inputGender);
-console.log(newUser);
+  if(isCValid(newUser)){
+   console.log(newUser);
+  }
 }
 
 function init(){
