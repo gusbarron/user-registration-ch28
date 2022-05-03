@@ -24,5 +24,32 @@ header.site-header{
 }
 
 .input-error{
-  border: 
+  border: 1px solid red;
+}
+
+.form-control{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.form-control:first-of-type{
+  margin-top: 1rem;
+}
+.form-control label{
+  flex-basis: 80;
+  text-align: right;
+  margin-right: 1rem;
+}
+.form-control input{
+  flex-basis: 80%;
+  padding: 5px;
+}
+.form-container button{
+  margin-left: 80%;
+  border: 1px solid #000000;
+  background-color: #252525;
+  color: #dedede;
+  padding: 5rem;
+  
 }

@@ -20,10 +20,22 @@ function isValid(user){
   if(user.password==0){
     valid=false;
     console.error("Add a password");
-
+    $("#txtPassword").addClass("input-error");
   }
   return valid;
 }
+
+function validatePass(){
+  let txtPass=$("#txtPassword");
+  let password=txtPass.val();
+  if(password.length<6){
+    txtPass.css("border","2px solid red");
+  }else{
+    txtPass.css("border","2px solid green");
+  }
+}
+
+
 
 function register(){
 let inputfName = $("#txtFirstName").val();
@@ -33,17 +45,15 @@ let inputPassword = $("#txtPassword").val();
 let inputGender = $("#txtGender").val();
 
 let newUser = new User(inputfName, inputlName, inputEmail, inputPassword,inputGender);
-  if(isCValid(newUser)){
+  if(isValid(newUser)){
    console.log(newUser);
+   $(`input`).val("");
   }
 }
 
 function init(){
-  console.log("Init function");
-  let user1 = new User("Gustavo", "Barron", "gusbarron@gmail.com", "1234","male");
-  let user2 = new User("Noah", "Barron", "noahbarron@gmail.com", "54321","male");
-  console.log(user1, user2);
+  console.log("Register");
+  $("#txtPassword").keyup(validatePass);
 }
 
 window.onload=init;
-
