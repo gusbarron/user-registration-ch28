@@ -30,12 +30,20 @@ function validatePass(){
   let password=txtPass.val();
   if(password.length<6){
     txtPass.css("border","2px solid red");
+    displayError("The password is too short :(");
   }else{
     txtPass.css("border","2px solid green");
+    hideError();
   }
 }
 
+function displayError(msg){
+  $("#alertError").removeClass("hide").text(msg);
 
+}
+function hideError(){
+  $("#alertError").removeClass("hide").text(msg);
+}
 
 function register(){
 let inputfName = $("#txtFirstName").val();

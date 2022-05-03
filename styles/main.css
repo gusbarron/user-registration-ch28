@@ -53,3 +53,14 @@ header.site-header{
   padding: 5rem;
   
 }
+.alert-error{
+  background-color: #f8acac;
+  color: #c95353;
+  padding: 3px;
+  margin:1rem 0 1rem 1rem;
+  text-align: center;
+  border-radius: 5px;
+}
+.hide{
+  display: none;
+}
