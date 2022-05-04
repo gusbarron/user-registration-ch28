@@ -1,6 +1,5 @@
-
 class User {
-  constructor(fName, lName, email, password) {
+  constructor(fName, lName, email, password, gender) {
     this.firstName = fName;
     this.lastName = lName;
     this.email = email;
@@ -9,59 +8,69 @@ class User {
   }
 }
 //Mandatory email and password
-function isValid(user){
-  let valid=true;
+function isValid(user) {
+  let valid = true;
   $("input").removeClass("input-error");
-  if(user.email.length==0){
-    valid=false;
+  if (user.email.length == 0) {
+    valid = false;
     console.error("Add an email");
     $("#txtEmail").addClass("input-error");
   }
-  if(user.password==0){
-    valid=false;
+  if (user.password == 0) {
+    valid = false;
     console.error("Add a password");
     $("#txtPassword").addClass("input-error");
   }
   return valid;
 }
 
-function validatePass(){
-  let txtPass=$("#txtPassword");
-  let password=txtPass.val();
-  if(password.length<6){
-    txtPass.css("border","2px solid red");
+function validatePass() {
+  console.log("validating pass");
+
+  let txtPass = $("#txtPassword");
+  let password = txtPass.val();
+  if (password.length < 6) {
+    txtPass.css("background", "#ff9898");
     displayError("The password is too short :(");
-  }else{
-    txtPass.css("border","2px solid green");
+  } else {
+    txtPass.css("background", "#64ce66");
     hideError();
   }
 }
 
-function displayError(msg){
-  $("#alertError").removeClass("hide").text(msg);
-
-}
-function hideError(){
+function displayError(msg) {
   $("#alertError").removeClass("hide").text(msg);
 }
+function hideError() {
+  $("#alertError").addClass("hide");
+}
 
-function register(){
-let inputfName = $("#txtFirstName").val();
-let inputlName = $("#txtLasName").val();
-let inputEmail = $("#txtEmail").val();
-let inputPassword = $("#txtPassword").val();
-let inputGender = $("#txtGender").val();
+function register() {
+  let inputfName = $("#txtFirstName").val();
+  let inputlName = $("#txtLasName").val();
+  let inputEmail = $("#txtEmail").val();
+  let inputPassword = $("#txtPassword").val();
+  let inputGender = $("#txtGender").val();
 
-let newUser = new User(inputfName, inputlName, inputEmail, inputPassword,inputGender);
-  if(isValid(newUser)){
-   console.log(newUser);
-   $(`input`).val("");
+  let newUser = new User(
+    inputfName,
+    inputlName,
+    inputEmail,
+    inputPassword,
+    inputGender
+  );
+  if (isValid(newUser)) {
+    saveUser(newUser);
+    hideError();
+    $(`input`).val("");
+  } else {
+    displayError("Please complete all the fields");
   }
 }
 
-function init(){
+function init() {
   console.log("Register");
   $("#txtPassword").keyup(validatePass);
 }
 
-window.onload=init;
+window.onload = init;

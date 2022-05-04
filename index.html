@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User  registration system</title>
-</head>
-<body>
-  <!-- login interface-->
-  <header class = "site-init">
-    <div class = "bar container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css">
+    <title>User registration system</title>
+  </head>
+  <body>
+    <!-- login interface-->
+    <header class="site-init">
+      <div class="bar container">
         <h1>My awesome user registration system</h1>
-      <nav class = "menu">
-        <a href="index.html">Home</a>
-        <a href="register.html"> Register</a>
-      </nav>
-    </div>
-    
-    
-
-  </header>
-  <main class="container">
-    <div class = "form-container">
-      <div class="form-control">
-        <label>Email:</label>
-        <input type="password" id="txtPassword">
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="register.html"> Register</a>
+        </nav>
       </div>
-      <button id="loginBtn">Login</button>
-    </div>
-    <button>Click!</button>
-    <p id="counter">0</p>
+    </header>
 
-  </main>
-  <footer>
+    <main class="container">
+      <div class="form-container">
+        <div>
+          <p id="alertError" class="alert-error hide">Invalid credentials!</p>
+        </div>
 
-  </footer>
-  <script src="https://code.jquerry.com/jquery"
-  
-</body>
+
+        <div class="form-control">
+          <label>Email:</label>
+          <input type="text" id="txtEmail" />
+        </div>
+
+
+        <div class="form-control">
+          <label>Password:</label>
+          <input type="password" id="txtPassword" />
+        </div>
+        <button id="loginBtn">Login</button>
+      </div>
+    </main>
+
+
+    <footer></footer>
+    <script src="https://code.jquerry.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/storeManager.js"></script>
+    <script src="scripts/login.js"></script>
+  </body>
 </html>
